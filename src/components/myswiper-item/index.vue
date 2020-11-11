@@ -1,9 +1,13 @@
 <template>
     <div :class="{bg1:bgIndex==1,bg2:bgIndex==2,bg3:bgIndex==3,bg4:bgIndex==4}" class="img-content">
+        <div v-if="bgIndex==1">
+            <bgone v-if="page==1"></bgone>
+        </div>
     </div>
 </template>
 
 <script>
+import bgone from './components/index-bg1.vue'
 export default {
     data() {
         return {
@@ -22,9 +26,13 @@ export default {
     },
     watch: {
        page(news){
+           
            //console.log(news)
        } 
     },
+    components:{
+       bgone
+    }
 }
 </script>
 
