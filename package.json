@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "css-scss": "^0.1.1",
     "lib-flexible": "^0.3.2",
     "postcss-pxtorem": "^5.1.1",
     "swiper": "^5.2.0",
@@ -21,6 +22,7 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "node-sass": "^4.14.1",
     "px2rem-loader": "^0.1.9",
     "sass": "^1.26.5",
     "sass-loader": "^8.0.2",
