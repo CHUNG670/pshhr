@@ -4,12 +4,14 @@
             <mnav></mnav>
         </div>
         <div class="text">
-            <p class="title">RONG HE</p>
-            <transition name="top">
-                <p class="textC" v-if="show">致力于成为一家在大数据和社交网络时代为企业智慧经营全面赋能的营销科技公司</p>
+            <transition name="fade">
+            <p class="title" v-show="show">RONG HE</p>
             </transition>
             <transition name="top">
-                <p class="textE" v-if="show">A marketing technology company dedicated to enhancing our clients’ enterprise capabilities through intelligent management and operation<br> in the era of big data and social networks</p>
+                <p class="textC" v-show="show">致力于成为一家在大数据和社交网络时代为企业智慧经营全面赋能的营销科技公司</p>
+            </transition>
+            <transition name="top">
+                <p class="textE" v-show="show">A marketing technology company dedicated to enhancing our clients’ enterprise capabilities through intelligent management and operation<br> in the era of big data and social networks</p>
             </transition>
         </div>
         <div class="next">
@@ -28,11 +30,22 @@ export default {
     },
     data() {
         return {
+            show:false
         }
     },
-    props:{
-        show:Boolean
-    }
+    mounted() {
+        let timer = setTimeout(()=>{
+            this.show=true
+        },500)
+    },
+    // props:{
+    //     show:Boolean
+    // },
+    // watch: {
+    //    show(news){
+    //        console.log(news)
+    //    } 
+    // },
 }
 </script>
 

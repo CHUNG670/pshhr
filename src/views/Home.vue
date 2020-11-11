@@ -32,9 +32,10 @@ export default {
                     speed:500,
                     mousewheel: true,
                     on: {
-                      slideChangeTransitionEnd: function(){
+                      slideChangeTransitionStart: function(){
                         //console.log(123)
-                        this.show=true
+                        //this.show=true
+                        //console.log(this.show);
                         //alert(this.activeIndex);
                       },
                     }
