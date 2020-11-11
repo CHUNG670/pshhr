@@ -8,7 +8,7 @@
 			<div class="right">
 				<transition name="top">
 					<div v-show="show">
-						<p class="p1" v-for="(p,index) in p1">{{p}}</p>
+						<p class="p1" v-for="(p,index) in p1" :key='index'>{{p}}</p>
 					</div>
 				</transition>
 				<transition name="fade">
@@ -16,7 +16,7 @@
 				</transition>
 				<transition name="top">
 					<div v-show="show">
-						<p class="p2" v-for="(p,index) in p2">{{p}}</p>
+						<p class="p2" v-for="(p,index) in p2" :key='index'>{{p}}</p>
 					</div>
 				</transition>
 			</div>
