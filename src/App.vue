@@ -28,6 +28,7 @@
   transform: translateY(0px);
 }
 
+
 .top2-enter-active {
   transition: all 1s;
 }
