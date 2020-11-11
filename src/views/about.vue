@@ -14,30 +14,28 @@
 					<p class="p1" v-show="show">为企业智慧经营全面赋能的营销科技公司</p>
 				</transition>
 				<transition name="top">
-					<p class="p2" v-show="show">A marketing technology company dedicated to enhancing our clients’ enterprise capabilities through
+					<p class="p2" v-show="show">A marketing technology company dedicated to enhancing our clients’ enterprise
+						capabilities through
 						intelligent management and operation</p>
 				</transition>
 			</div>
 		</div>
-		<!-- <div class="introduction">
-			<div class="title">
-				<p>公司介绍</p>
-				<p>INTRODUCTION</p>
-			</div>
-		</div> -->
 		<introduction :title="title" :englishtitle="englishtitle" :p1="p1" :p2="p2"></introduction>
+		<circle-list></circle-list>
 	</div>
 </template>
 
 <script>
 	import heada from '../components/header/index.vue'
 	import introduction from '../components/introduction/introduction.vue'
+	import circleList from '../components/introduction/circle-list.vue'
 	export default {
 		components: {
 			heada,
-			introduction
+			introduction,
+			circleList
 		},
-		data(){
+		data() {
 			return {
 				show: false,
 				title: '公司介绍',
@@ -57,9 +55,9 @@
 			}
 		},
 		mounted() {
-			setTimeout(()=>{
+			setTimeout(() => {
 				this.show = true
-			},500)
+			}, 500)
 		}
 	}
 </script>
@@ -110,6 +108,4 @@
 			}
 		}
 	}
-
-
 </style>
