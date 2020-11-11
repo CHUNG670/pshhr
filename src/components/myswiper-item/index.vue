@@ -1,6 +1,5 @@
 <template>
     <div :class="{bg1:bgIndex==1,bg2:bgIndex==2,bg3:bgIndex==3,bg4:bgIndex==4}" class="img-content">
-        
     </div>
 </template>
 
@@ -8,17 +7,23 @@
 export default {
     data() {
         return {
-            
+            thispage:0
         }
     },
     props:{
         bgIndex:{
             default:1,
             type:Number
-        }
+        },
+        page:Number
     },
     mounted() {
         
+    },
+    watch: {
+       page(news){
+           //console.log(news)
+       } 
     },
 }
 </script>
@@ -41,5 +46,8 @@ export default {
 .bg4{
     background-image: url('../../static/img/bg4.jpg');
 }
-
+.text{
+    font-size: 100px;
+    color: #ffffff;
+}
 </style>

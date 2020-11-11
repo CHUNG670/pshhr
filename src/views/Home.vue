@@ -2,10 +2,10 @@
   <div class="home">
     <swiper :options="swiperOption" class="swiper">
             <swiper-slide class="swiper-slide">
-              <fbg :show="show"></fbg>
+              <fbg :show="show" :page="page"></fbg>
             </swiper-slide>
             <swiper-slide class="swiper-slide" v-for="(item,index) in carouselArr" :key="index">
-              <bg :bgIndex="item"></bg>
+              <bg :bgIndex="item" :page="page"></bg>
             </swiper-slide>
             <div class="swiper-pagination"  slot="pagination"></div>
         </swiper>
@@ -15,10 +15,17 @@
 // @ is an alias to /src
 import bg from '@/components/myswiper-item/index.vue'
 import fbg from '@/components/firstPage/index.vue'
+
+var _this
 export default {
   name: 'Home',
+  beforeCreate() {
+    console.log(this)
+    _this=this
+  },
   data(){
             return {
+                page:0,
                 swiperOption:{
                     //显示分页
                     pagination: {
@@ -32,11 +39,11 @@ export default {
                     speed:500,
                     mousewheel: true,
                     on: {
-                      slideChangeTransitionStart: function(){
-                        //console.log(123)
-                        //this.show=true
-                        //console.log(this.show);
-                        //alert(this.activeIndex);
+                      slideChangeTransitionEnd: function(){
+                        //this.page.index = this.activeIndex
+                        //console.log(this.activeIndex)
+                        //console.log(_this)
+                        _this.page=this.activeIndex
                       },
                     }
                 },
@@ -49,7 +56,12 @@ export default {
         components:{
             bg,
             fbg
-        }
+        },
+        methods: {
+          tt(tt){
+            this.page.index = tt
+          }
+        },
 }
 </script>
 
